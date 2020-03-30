@@ -18,4 +18,5 @@ public class ChatController {
     public AjaxResult sendMessage() {
         return AjaxResult.success("success");
     }
+
 }

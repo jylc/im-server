@@ -6,6 +6,8 @@
 <generatorConfiguration>
     <context id="im" targetRuntime="MyBatis3">
         <!-- plugin -->
+        <!-- 添加 @Mapper 注解 -->
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>
         <!-- 支持分页 -->
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
         <!-- 重写 toString() -->

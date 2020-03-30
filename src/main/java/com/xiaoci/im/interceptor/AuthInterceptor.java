@@ -10,7 +10,7 @@ public class AuthInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("请求: " + request);
+        System.out.println("请求: " + request.getRequestURI());
         // 设置跨域
         setCORS(response);
         return true;
