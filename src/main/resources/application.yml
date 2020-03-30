@@ -4,31 +4,31 @@ server:
     context-path: /
 
 spring:
-  # Êı¾İ¿âÅäÖÃ
+  # æ•°æ®åº“é…ç½®
   datasource:
-    # »ù±¾ÅäÖÃ
+    # åŸºæœ¬é…ç½®
     url: jdbc:mysql://localhost:3306/im?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=UTC
     username: root
     password: wztxz19971029
-    # druidÅäÖÃ (²Î¿¼°¢ÀïÔÆÍÆ¼öÅäÖÃ)
+    # druidé…ç½® (å‚è€ƒé˜¿é‡Œäº‘æ¨èé…ç½®)
     druid:
-      # ÅäÖÃ³õÊ¼»¯´óĞ¡¡¢×îĞ¡¡¢×î´ó
+      # é…ç½®åˆå§‹åŒ–å¤§å°ã€æœ€å°ã€æœ€å¤§
       initial-size: 5
       min-idle: 10
       max-active: 20
-      # ÅäÖÃ»ñÈ¡Á¬½ÓµÈ´ı³¬Ê±µÄÊ±¼ä
+      # é…ç½®è·å–è¿æ¥ç­‰å¾…è¶…æ—¶çš„æ—¶é—´
       max-wait: 60000
       # prepared statement
       pool-prepared-statements: true
       max-open-prepared-statements: 20
-      # ÅäÖÃtestµÄÊ±¼äµã
+      # é…ç½®testçš„æ—¶é—´ç‚¹
       test-on-borrow: false
       test-on-return: false
       test-while-idle: true
-      # ÅäÖÃÒ»¸öÁ¬½ÓÔÚ³ØÖĞ×îĞ¡Éú´æµÄÊ±¼ä£¬µ¥Î»ÊÇºÁÃë
+      # é…ç½®ä¸€ä¸ªè¿æ¥åœ¨æ± ä¸­æœ€å°ç”Ÿå­˜çš„æ—¶é—´ï¼Œå•ä½æ˜¯æ¯«ç§’
       min-evictable-idle-time-millis: 600000
       max-evictable-idle-time-millis: 900000
-      # ÅäÖÃ¼à¿ØÍ³¼ÆÀ¹½ØµÄfilters
+      # é…ç½®ç›‘æ§ç»Ÿè®¡æ‹¦æˆªçš„filters
       filters: stat
-      # ÅäÖÃ¼ä¸ô¶à¾Ã²Å½øĞĞÒ»´Î¼ì²â£¬¼ì²âĞèÒª¹Ø±ÕµÄ¿ÕÏĞÁ¬½Ó£¬µ¥Î»ÊÇºÁÃë
+      # é…ç½®é—´éš”å¤šä¹…æ‰è¿›è¡Œä¸€æ¬¡æ£€æµ‹ï¼Œæ£€æµ‹éœ€è¦å…³é—­çš„ç©ºé—²è¿æ¥ï¼Œå•ä½æ˜¯æ¯«ç§’
       time-between-eviction-runs-millis: 2000
