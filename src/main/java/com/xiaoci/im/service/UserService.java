@@ -22,7 +22,7 @@ public class UserService {
     }
 
     public void register(RegisterDTO registerDTO) {
-        verify(registerDTO.getPassword());
+        verify(registerDTO.getTelephone());
         User user = new User();
         user.setTelephone(registerDTO.getTelephone());
         user.setPassword(SHA256Utils.getSHA256(registerDTO.getPassword()));
