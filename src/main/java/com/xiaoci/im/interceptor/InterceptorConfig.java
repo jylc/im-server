@@ -9,6 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        // 注册 base 拦截器
+        registry.addInterceptor(baseIntercept())
+                .addPathPatterns("/**");
+        // 注册 auth 拦截器
         registry.addInterceptor(authenticationIntercept())
                 .addPathPatterns("/**");
     }
@@ -16,5 +20,10 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Bean
     public AuthInterceptor authenticationIntercept() {
         return new AuthInterceptor();
+    }
+
+    @Bean
+    public BaseInterceptor baseIntercept() {
+        return new BaseInterceptor();
     }
 }
