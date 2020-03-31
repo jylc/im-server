@@ -6,6 +6,8 @@ import com.xiaoci.im.domain.AjaxResult;
 import com.xiaoci.im.entity.dto.RegisterDTO;
 import com.xiaoci.im.exception.user.UserException;
 import com.xiaoci.im.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.regex.Pattern;
 
 @RestController
+@Api(value = "用户管理")
 public class UserController {
 
     private final UserService userService;
@@ -22,6 +25,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
+    @ApiOperation(value = "注册（DONE）")
     public AjaxResult register(@RequestBody RegisterDTO registerDTO) {
         verify(registerDTO.getTelephone(), registerDTO.getPassword());
         userService.register(registerDTO);

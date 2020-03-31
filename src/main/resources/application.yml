@@ -7,6 +7,7 @@ server:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.xiaoci.im.mapper
+
 spring:
   # 数据库配置
   datasource:
